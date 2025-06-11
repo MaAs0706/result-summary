@@ -1,0 +1,196 @@
+
+/* CSS Variables for consistent theming */
+:root {
+    --color-primary: #674bff;
+    --color-bg-light: #f5f6fa;
+    --color-white: #fff;
+    --color-text-dark: #303b59;
+    --color-reaction: #ff5555;
+    --color-memory: #ffb21e;
+    --color-verbal: #00bb8f;
+    --color-visual: #1125d6;
+    --color-btn-hover: #252d47;
+  }
+  
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color-bg-light);
+    font-size: 16px;
+  }
+  
+  /* Main card layout */
+  .results-card {
+    display: flex;
+    max-width: 600px;
+    background: var(--color-white);
+    border-radius: 1.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Score section */
+  .results-card__score {
+    width: 50%;
+    padding: 1.5rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    border-radius: 1.25rem;
+  }
+  
+  .results-card__score h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+  
+  .score-display {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .score-display__value {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  
+  .score-display__total {
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+  
+  .results-card__score h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .results-card__score p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  
+  /* Summary section */
+  .results-card__summary {
+    width: 50%;
+    padding: 1.5rem;
+  }
+  
+  .results-card__summary h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 1rem;
+  }
+  
+  .summary-list {
+    list-style: none;
+  }
+  
+  .summary-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .summary-list__category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .summary-list__category img {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .summary-list__score {
+    color: var(--color-text-dark);
+    font-weight: 700;
+  }
+  
+  .summary-list__score span {
+    opacity: 0.5;
+  }
+  
+  /* Category colors and backgrounds */
+  .summary-list__item--reaction { background: rgba(255, 85, 85, 0.1); }
+  .summary-list__item--reaction .summary-list__category { color: var(--color-reaction); }
+  .summary-list__item--memory { background: rgba(255, 178, 30, 0.1); }
+  .summary-list__item--memory .summary-list__category { color: var(--color-memory); }
+  .summary-list__item--verbal { background: rgba(0, 187, 143, 0.1); }
+  .summary-list__item--verbal .summary-list__category { color: var(--color-verbal); }
+  .summary-list__item--visual { background: rgba(17, 37, 214, 0.1); }
+  .summary-list__item--visual .summary-list__category { color: var(--color-visual); }
+  
+  /* Button */
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--color-text-dark);
+    color: var(--color-white);
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: var(--color-btn-hover);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .results-card {
+      flex-direction: column;
+      max-width: 100%;
+      border-radius: 0;
+    }
+  
+    .results-card__score,
+    .results-card__summary {
+      width: 100%;
+      border-radius: 0;
+    }
+  
+    .results-card__score {
+      border-bottom-left-radius: 1.25rem;
+      border-bottom-right-radius: 1.25rem;
+    }
+  }
+  
+  /* Attribution */
+  .attribution {
+    position: absolute;
+    bottom: 0.5rem;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
